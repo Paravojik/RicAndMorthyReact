@@ -1,0 +1,51 @@
+
+.episode__container{
+    display: none;
+    padding: 20px 20px;
+}
+
+.episode__container__table{
+    width: 100%;
+height: 1vh;
+    border-collapse: collapse;
+
+}
+.episode__row{
+    height: 30px;
+}
+tr:nth-child(even) {
+    background-color: rgb(54, 54, 54);
+    color: white;
+ 
+  }
+
+.episode__row__val{
+    border: 1px solid rgb(54, 54, 54);
+    height: 30px;
+    font-size: 16px;
+    padding: 8px;
+    text-align: center;
+}
+.episode__row__val__id{
+    width: 5em;
+}
+.poup__episode__filter__text{
+    font-size: 28px;
+}
+.poup__episode__filter{
+min-height: 20vh;
+top: 30vh;
+text-align: center;
+}
+.poup__episode__filter__inp{
+    width: 90%;
+    height: 36px;
+    font-size: 32px;
+    outline: none;
+
+    
+    border: 0px;
+    border-bottom: 1px solid black;
+    margin: 10px 0;
+    
+}

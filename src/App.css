@@ -1,38 +1,94 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.App{
+  width: 100%;
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.App__main{
+  width: 100%;
+  min-height: 90vh;
+  /* overflow: scroll;
+  overflow-x: hidden; */
+display: flex;
+align-items: center;
+justify-content: space-around;
+margin-top: 10vh;
+flex-direction: column;
+}
+.poup{
+  width: 25%;
+  min-height: 60vh;
+  background-color: white;
+  position: fixed;
+  top: 20vh;
+  left: 37.5%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgb(61, 61, 61);
+  padding: 20px 10px;
+  padding-right: 25px;
+  text-align: center;
+opacity: 0.95;
 }
-
-.App-link {
-  color: #61dafb;
+.container{
+  width: 100%;
+  height: 90vh;
+  overflow: scroll;
+  overflow-x: hidden;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: flex-start;
+/* margin-top: 10vh; */
 }
+@media screen and (max-width:900px) {
+  .poup{
+width: 50%;
+left: 25%;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  } 
+  .header__section__page{
+      font-size: 16px;
   }
-  to {
-    transform: rotate(360deg);
+  .header__logo{
+      font-size: 24px;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .poup{
+width: 94%;
+left: 3%;
+  } 
+  .header__logo{
+      display: none;
+  }  
+  .header{
+      padding: 0;
+      justify-content: center;
+  }
+  .container{
+      overflow-x: auto;
+  }
+  .container{
+      padding: 10px 5px;
+  }
+  .container__table{
+      /* padding-left: 160px; */
+
+      justify-content: flex-start;
   }
 }

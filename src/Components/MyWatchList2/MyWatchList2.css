@@ -1,0 +1,40 @@
+.myWatchList{
+    display: none;
+}
+.myWatchList__box{
+    width: 200px;
+  height: 20vh;
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px #ccc;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: space-between;
+
+}
+.myWatchList__box__text{
+    font-size: 24px;
+    font-weight: 600;
+}
+.myWatchList__box__btns{
+    width: 60%;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.myWatchList__box__btns__btn{
+    height:  32px;
+    cursor: pointer;
+
+}
+.poup__watchList{
+    text-align: center;
+    min-height: 40vh;
+    top: 30vh;
+    padding-right: 20px;
+    padding-top: 30px;
+}

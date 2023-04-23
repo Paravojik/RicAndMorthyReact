@@ -1,0 +1,20 @@
+.controls{
+    position: fixed;
+    bottom: 10px;
+    display: flex;
+}
+.btn{
+    border: none;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+.filter{
+    display: none;
+}
+#filters__charachter{
+    display: flex;
+}
