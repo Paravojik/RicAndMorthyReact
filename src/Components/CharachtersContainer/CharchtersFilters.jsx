@@ -56,28 +56,30 @@ let differentSpecies=[
 "Cronenberg",
 "Disease"
 ]
+let currentKey=-1
     return(
-        <div class="poup poup__charaachter__filters" style={{display:props.isVisibleFilter}}>
+        <div className="poup poup__charaachter__filters" style={{display:props.isVisibleFilter}}>
             <img className='closeBtn' src={close} alt="" onClick={()=>props.closeWithoutChange('none')}/>
-        <div class="poup__charaachter__filters__filter">
-            <div class="poup__charaachter__filters__filter__text">Status:</div>
-            <select name="poup__charaachter__filters__filter__section__status" class="poup__charaachter__filters__filter__section poup__charaachter__filters__filter__section__status" id="poup__charaachter__filters__filter__section__status">
-                <option class="poup__charaachter__filters__filter__section__option" value="">None</option>
-                <option class="poup__charaachter__filters__filter__section__option" value="&status=alive">Alive</option>
-                <option class="poup__charaachter__filters__filter__section__option" value="&status=dead">Dead</option>
-                <option class="poup__charaachter__filters__filter__section__option" value="&status=unknown">Unknown</option>
+        <div className="poup__charaachter__filters__filter">
+            <div className="poup__charaachter__filters__filter__text">Status:</div>
+            <select name="poup__charaachter__filters__filter__section__status" className="poup__charaachter__filters__filter__section poup__charaachter__filters__filter__section__status" id="poup__charaachter__filters__filter__section__status">
+                <option className="poup__charaachter__filters__filter__section__option" value="">None</option>
+                <option className="poup__charaachter__filters__filter__section__option" value="&status=alive">Alive</option>
+                <option className="poup__charaachter__filters__filter__section__option" value="&status=dead">Dead</option>
+                <option className="poup__charaachter__filters__filter__section__option" value="&status=unknown">Unknown</option>
             </select>
         </div>
-        <div class="poup__charaachter__filters__filter">
-            <div class="poup__charaachter__filters__filter__text" >Species:</div>
-            <select name="poup__charaachter__filters__filter__section__species" class="poup__charaachter__filters__filter__section poup__charaachter__filters__filter__section__species" id="poup__charaachter__filters__filter__section__species">
-                <option class="poup__charaachter__filters__filter__section__option" value="">None</option>
+        <div className="poup__charaachter__filters__filter">
+            <div className="poup__charaachter__filters__filter__text" >Species:</div>
+            <select name="poup__charaachter__filters__filter__section__species" className="poup__charaachter__filters__filter__section poup__charaachter__filters__filter__section__species" id="poup__charaachter__filters__filter__section__species">
+                <option className="poup__charaachter__filters__filter__section__option" value="">None</option>
                 {differentSpecies.map((item)=>{
                     // console.log(differentSpecies)
                     let currentClass="&species="+item
-                 
+                    currentKey++
+                    let currentKeyName='poup__charaachter__filters__filter__section__speciesOpt'+currentKey
                     return(
-                        <option class="poup__charaachter__filters__filter__section__option" value={currentClass}>{item}</option>
+                        <option key={currentKeyName} className="poup__charaachter__filters__filter__section__option" value={currentClass}>{item}</option>
                     )
                 })}
 

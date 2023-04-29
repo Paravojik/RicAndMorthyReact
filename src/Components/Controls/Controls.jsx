@@ -90,14 +90,14 @@ function Controls(props){
         (val==='none') ? setIsVisibleFilter('none') : setIsVisibleFilter('flex')     
     }
  return(
-    <div class="controls">
-    <button class="btn" id="prevBtn" onClick={()=>changeCurrentPageNumberMinus1('back')}>Back</button>
-    <button class="btn filter" id="filters__charachter" onClick={ClickFiltersCharachter2}>Filters</button>
+    <div className="controls">
+    <button className="btn" id="prevBtn" onClick={()=>changeCurrentPageNumberMinus1('back')}>Back</button>
+    <button className="btn filter" id="filters__charachter" onClick={ClickFiltersCharachter2}>Filters</button>
     {/* <button class="btn filter" id="filters__episode">Filters</button>
 
     <button class="btn filter" id="filters__locations">Filters</button>
     <button class="btn filter" id="add__myWatchList">Add new item</button> */}
-    <button class="btn" id="nextBtn" onClick={()=>changeCurrentPageNumberPlus1('next')}>Next</button>
+    <button className="btn" id="nextBtn" onClick={()=>changeCurrentPageNumberPlus1('next')}>Next</button>
     <CharchtersFilters  isVisibleFilter={isVisibleFilter} ClickFiltersCharachter={ClickFiltersCharachter} closeWithoutChange={closeWithoutChange} />
 </div>
  )

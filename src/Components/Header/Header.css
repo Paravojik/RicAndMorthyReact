@@ -30,16 +30,7 @@
 .header__section__page{
     margin: 0 10px;
 }
-@media screen and (max-width:700px){
 
-    .header__section__page{
-        font-size: 12px;
-    
-    }
-    .header__logo{
-        font-size: 16px;
-    }   
-  }
   @media screen and (max-width:900px){
     .header__section__page{
         font-size: 16px;
@@ -48,17 +39,27 @@
         font-size: 24px;
     }
   }
+  @media screen and (max-width:700px){
+    .header{
+        padding: 0 10px;
+        justify-content: center;
+    }
+    .header__section__page{
+        font-size: 12px;
+    
+    }
+    .header__logo{
+        font-size: 16px;
+        margin-right: 20px;
+    }   
+  }
   @media screen and (max-width:500px) {
+
     .header__logo{
         display: none;
     }  
     .header{
         padding: 0;
-        justify-content: center;
-    }
-  }
-  @media screen and (max-width:400px){
-    .header__section__page{
-        font-size: 12px;
+     
     }
   }

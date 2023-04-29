@@ -49,9 +49,9 @@ function EpisodeContainer(){
              
                    </thead>
                    {currentPageEpisode.map((item)=>{
-                 
+                 let curentKey='episode__rowKey'+item.id
                     return(
-                        <tbody className="episode__row">
+                        <tbody key={curentKey} className="episode__row" >
                             <tr>
                             <td className="episode__row__val">{item.id}</td><td className="episode__row__val"> {item.episode}</td><td className="episode__row__val">{item.name}</td><td className="episode__row__val">{item.air_date}</td><td className="episode__row__val">{item.characters.length}</td>
                             </tr>

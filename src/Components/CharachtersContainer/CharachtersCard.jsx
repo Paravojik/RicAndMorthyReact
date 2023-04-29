@@ -1,7 +1,7 @@
 import './CharachtersContainer.css'
 import CharachtersCardPoup from './CharachtersCardPoup'
 import { useState } from 'react'
-function CharachtersCard(props){
+function CharachtersCard(props,{key}){
     let [isVisible,setIsVisible]=useState('none')
     function ClickPoup(close){
         
@@ -20,8 +20,9 @@ function CharachtersCard(props){
         }
         console.log(isVisible)
     }
+    let currentKeyOfCardCharachter=key
     return(
-        <div className="card">
+        <div className="card" key={currentKeyOfCardCharachter}>
        
         <img className="avatar" src={props.image}alt=""/>
        <div className="cardName">{props.name}</div>

@@ -92,8 +92,9 @@ let [amountOfPages,setAmountOfPages]=useState('')
             
             {currentPage.map((item)=>{
                 // console.log(item)
+                let currentKey='CharachtersCardKey'+item.id
                 return(
-                <CharachtersCard  data={item} image={item.image} name={item.name}/>
+                <CharachtersCard key={currentKey} id={item.id}  data={item} image={item.image} name={item.name}/>
                 )
             })}
             {/* <CharachtersCard /> */}

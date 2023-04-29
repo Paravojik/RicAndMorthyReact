@@ -36,7 +36,7 @@ return(
         {arrOfEpisodes.map((item)=>{
             // console.log(item)
             return(
-                <MyWatchList2Card id={item.id} name={item.name} isWatched={item.isWatched} isDeleted={item.isDeleted} changeIsWatched={changeIsWatched} deleteWatch={deleteWatch}/>
+                <MyWatchList2Card key={item.id} id={item.id} name={item.name} isWatched={item.isWatched} isDeleted={item.isDeleted} changeIsWatched={changeIsWatched} deleteWatch={deleteWatch}/>
             )
         })}
         

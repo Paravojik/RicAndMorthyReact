@@ -20,7 +20,7 @@ function LocationContainer(){
     
     
     
-    // $('.location__container__table').append('<tr class="episode__row"><td class="episode__row__val">'+data.results[i].id+'</td><td class="episode__row__val">  '+data.results[i].name+'</td><td class="episode__row__val">'+data.results[i].type+'</td><td class="episode__row__val">'+data.results[i].dimension+'</td><td class="episode__row__val">'+data.results[i].residents.length+'</td></tr>')
+    // $('.location__container__table').append('<tr className="episode__row"><td className="episode__row__val">'+data.results[i].id+'</td><td className="episode__row__val">  '+data.results[i].name+'</td><td className="episode__row__val">'+data.results[i].type+'</td><td className="episode__row__val">'+data.results[i].dimension+'</td><td className="episode__row__val">'+data.results[i].residents.length+'</td></tr>')
     // }
     }).catch((error) => {
         console.log(error)
@@ -56,10 +56,11 @@ return(
           
            </thead>
            {currentPageLocations.map((item)=>{
+            let curentKey='episode__rowKey'+item.id
             return(
-                <tbody class="episode__row">
+                <tbody key={curentKey} className="episode__row">
                     <tr>
-                    <td class="episode__row__val">{item.id}</td><td class="episode__row__val">{item.name}</td><td class="episode__row__val">{item.type}</td><td class="episode__row__val">{item.dimension}</td><td class="episode__row__val">{item.residents.length}</td>
+                    <td className="episode__row__val">{item.id}</td><td className="episode__row__val">{item.name}</td><td className="episode__row__val">{item.type}</td><td className="episode__row__val">{item.dimension}</td><td className="episode__row__val">{item.residents.length}</td>
                     </tr>
                     </tbody>
             )

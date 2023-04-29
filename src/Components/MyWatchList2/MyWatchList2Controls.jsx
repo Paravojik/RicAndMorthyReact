@@ -18,10 +18,10 @@ function MyWatchList2Controls(props){
     }
     return(
         <div className="controls">
-        {/* <button class="btn" id="prevBtn" onClick={()=>changeCurrentPageNumberMinus1('back')}>Back</button> */}
+        {/* <button className="btn" id="prevBtn" onClick={()=>changeCurrentPageNumberMinus1('back')}>Back</button> */}
 
         <button className="btn filter" id="add__myWatchList" onClick={openWatchFiltres}>Add new item</button>
-        {/* <button class="btn" id="nextBtn" onClick={()=>changeCurrentPageNumberPlus1('next')}>Next</button> */}
+        {/* <button className="btn" id="nextBtn" onClick={()=>changeCurrentPageNumberPlus1('next')}>Next</button> */}
       <MyWatchList2Poup isVisibleWatch={isVisibleWatch} closeWithoutChange={closeWithoutChange} getWatchFiltres={getWatchFiltres}/>
     </div>
     )
