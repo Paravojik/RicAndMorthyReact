@@ -38,17 +38,24 @@ function EpisodeContainer(){
     return(
         <div className="container episode__container container__table" >
             <table className="episode__container__table">
-                <tr className="episode__row">
+                <thead className="episode__row">
+                    <tr>
                     <th className="episode__row__val">Id</th>
                     <th className="episode__row__val">Episode</th>
                     <th className="episode__row__val">Name</th>
                     <th className="episode__row__val">Released</th>
                     <th className="episode__row__val">Characters</th>
-                   </tr>
+                    </tr>
+             
+                   </thead>
                    {currentPageEpisode.map((item)=>{
                  
                     return(
-                        <tr className="episode__row"><td className="episode__row__val">{item.id}</td><td className="episode__row__val"> {item.episode}</td><td className="episode__row__val">{item.name}</td><td className="episode__row__val">{item.air_date}</td><td className="episode__row__val">{item.characters.length}</td></tr>
+                        <tbody className="episode__row">
+                            <tr>
+                            <td className="episode__row__val">{item.id}</td><td className="episode__row__val"> {item.episode}</td><td className="episode__row__val">{item.name}</td><td className="episode__row__val">{item.air_date}</td><td className="episode__row__val">{item.characters.length}</td>
+                            </tr>
+                            </tbody>
                     )
                    })}
             </table>

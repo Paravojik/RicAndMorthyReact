@@ -45,16 +45,23 @@ function LocationContainer(){
 return(
     <div className="container location__container container__table">
     <table className="location__container__table">
-        <tr className="episode__row">
+        <thead className="episode__row">
+            <tr>
             <th className="episode__row__val episode__row__val__id">Id</th>
             <th className="episode__row__val">Name</th>
             <th className="episode__row__val">Type</th>
             <th className="episode__row__val">Dimension</th>
             <th className="episode__row__val">Residents</th>
-           </tr>
+            </tr>
+          
+           </thead>
            {currentPageLocations.map((item)=>{
             return(
-                <tr class="episode__row"><td class="episode__row__val">{item.id}</td><td class="episode__row__val">{item.name}</td><td class="episode__row__val">{item.type}</td><td class="episode__row__val">{item.dimension}</td><td class="episode__row__val">{item.residents.length}</td></tr>
+                <tbody class="episode__row">
+                    <tr>
+                    <td class="episode__row__val">{item.id}</td><td class="episode__row__val">{item.name}</td><td class="episode__row__val">{item.type}</td><td class="episode__row__val">{item.dimension}</td><td class="episode__row__val">{item.residents.length}</td>
+                    </tr>
+                    </tbody>
             )
            })}
     </table>

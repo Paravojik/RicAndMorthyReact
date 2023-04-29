@@ -68,7 +68,7 @@ left: 25%;
   }
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:550px) {
   .poup{
 width: 94%;
 left: 3%;
@@ -88,7 +88,10 @@ left: 3%;
   }
   .container__table{
       /* padding-left: 160px; */
-
       justify-content: flex-start;
+  }
+  .controls__table{
+    left: 50%;
+    transform: translate(-50%, 0);
   }
 }

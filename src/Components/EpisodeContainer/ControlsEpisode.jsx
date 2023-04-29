@@ -37,13 +37,13 @@ function ControlsEpisode(props){
 
     
     return(
-        <div class="controls">
-        <button class="btn" id="prevBtnEpisode" onClick={()=>changeCurrentPageNumberMinus1('back')}>Back</button>
+        <div className="controls controls__table">
+        <button className="btn" id="prevBtnEpisode" onClick={()=>changeCurrentPageNumberMinus1('back')}>Back</button>
 
-        <button class="btn filter" id="filters__episode" onClick={openEpisodeFiltres}>Filters</button>
+        <button className="btn filter" id="filters__episode" onClick={openEpisodeFiltres}>Filters</button>
     
 
-        <button class="btn" id="nextBtnEpisode" onClick={()=>changeCurrentPageNumberPlus1('next')}>Next</button>
+        <button className="btn" id="nextBtnEpisode" onClick={()=>changeCurrentPageNumberPlus1('next')}>Next</button>
      <EpisodeFiltres isOpenEpisodeFiltres={isOpenEpisodeFiltres} closeWithoutChange={closeWithoutChange} getEpisodeFiltres={getEpisodeFiltres}/>
     </div>
     

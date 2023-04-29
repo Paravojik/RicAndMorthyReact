@@ -7,10 +7,12 @@ import MyWatchList2Controls from './MyWatchList2Controls'
 function MyWatchList2(){
     let [arrOfEpisodes,setArrOfEpisodes]=useState(JSON.parse(localStorage.getItem('arrOfEpisodes__LS')) || [])
     function getEpisodeWatch(val){
-        setArrOfEpisodes([...arrOfEpisodes,{id:arrOfEpisodes.length,name:val,isWatched:false,isDeleted:'flex'}])
+        let copy=[...arrOfEpisodes]
+        copy.push({id:arrOfEpisodes.length,name:val,isWatched:false,isDeleted:'flex'})
+        setArrOfEpisodes(copy)
         // setArrOfEpisodes([...arrOfEpisodes,arrOfEpisodes[0].isWatched='true'])
         // console.log(arrOfEpisodes)
-        localStorage.setItem('arrOfEpisodes__LS',JSON.stringify(arrOfEpisodes))
+        localStorage.setItem('arrOfEpisodes__LS',JSON.stringify(copy))
       
     }
     function changeIsWatched(id){

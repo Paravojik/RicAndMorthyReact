@@ -83,17 +83,17 @@ let differentSpecies=[
 
             </select>
         </div>
-        <div class="poup__charaachter__filters__filter">
-            <div class="poup__charaachter__filters__filter__text">Gender:</div>
-            <select name="poup__charaachter__filters__filter__section__gender" class="poup__charaachter__filters__filter__section poup__charaachter__filters__filter__section__gender" id="poup__charaachter__filters__filter__section__gender">
-                <option class="poup__charaachter__filters__filter__section__option" value="">None</option>
-                <option class="poup__charaachter__filters__filter__section__option" value="&gender=female">Female</option>
-                <option class="poup__charaachter__filters__filter__section__option" value="&gender=male">Male</option>
-                <option class="poup__charaachter__filters__filter__section__option" value="&gender=genderless ">Genderless </option>
-                <option class="poup__charaachter__filters__filter__section__option" value="&gender=unknown">Unknown</option>
+        <div className="poup__charaachter__filters__filter">
+            <div className="poup__charaachter__filters__filter__text">Gender:</div>
+            <select name="poup__charaachter__filters__filter__section__gender" className="poup__charaachter__filters__filter__section poup__charaachter__filters__filter__section__gender" id="poup__charaachter__filters__filter__section__gender">
+                <option className="poup__charaachter__filters__filter__section__option" value="">None</option>
+                <option className="poup__charaachter__filters__filter__section__option" value="&gender=female">Female</option>
+                <option className="poup__charaachter__filters__filter__section__option" value="&gender=male">Male</option>
+                <option className="poup__charaachter__filters__filter__section__option" value="&gender=genderless ">Genderless </option>
+                <option className="poup__charaachter__filters__filter__section__option" value="&gender=unknown">Unknown</option>
             </select>
         </div>
-        <button class="btn poup__charaachter__filters__btn" onClick={()=>props.ClickFiltersCharachter('none',document.getElementById('poup__charaachter__filters__filter__section__status').value,document.getElementById('poup__charaachter__filters__filter__section__species').value,document.getElementById('poup__charaachter__filters__filter__section__gender').value)}>Apply</button>
+        <button className="btn poup__charaachter__filters__btn" onClick={()=>props.ClickFiltersCharachter('none',document.getElementById('poup__charaachter__filters__filter__section__status').value,document.getElementById('poup__charaachter__filters__filter__section__species').value,document.getElementById('poup__charaachter__filters__filter__section__gender').value)}>Apply</button>
     </div>
     )
 }

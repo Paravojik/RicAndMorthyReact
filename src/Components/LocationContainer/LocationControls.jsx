@@ -141,14 +141,14 @@ let differentTypes=   [ 'Planet', 'Cluster', 'Space station', 'Microverse', 'TV'
     //     console.log(differentDimensions.current)
     // },100)
     return(
-        <div class="controls">
-        <button class="btn" id="prevBtn" onClick={()=>changeCurrentPageNumberMinus1('back')}>Back</button>
+        <div className="controls controls__table">
+        <button className="btn" id="prevBtn" onClick={()=>changeCurrentPageNumberMinus1('back')}>Back</button>
 
      
     
-        <button class="btn filter" id="filters__locations" onClick={openLocationsFiltres}>Filters</button>
+        <button className="btn filter" id="filters__locations" onClick={openLocationsFiltres}>Filters</button>
 
-        <button class="btn" id="nextBtn" onClick={()=>changeCurrentPageNumberPlus1('next')} >Next</button>
+        <button className="btn" id="nextBtn" onClick={()=>changeCurrentPageNumberPlus1('next')} >Next</button>
        <LocationFiltres differentTypes={differentTypes} differentDimensions={differentDimensions} isOpenLocationFiltres={isOpenLocationFiltres} closeWithoutChange={closeWithoutChange} getLocationsFiltres={getLocationsFiltres}/>
     </div>
     )
