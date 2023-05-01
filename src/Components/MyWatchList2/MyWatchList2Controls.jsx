@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './MyWatchList2.css'
 import MyWatchList2Poup from './MyWatchList2Poup'
+import ClosePage from '../ClosePage/ClosePage'
 function MyWatchList2Controls(props){
     let [isVisibleWatch,setIsVisibleWatch]=useState('none')
     function getWatchFiltres(val,filters=''){
@@ -22,6 +23,7 @@ function MyWatchList2Controls(props){
 
         <button className="btn filter" id="add__myWatchList" onClick={openWatchFiltres}>Add new item</button>
         {/* <button className="btn" id="nextBtn" onClick={()=>changeCurrentPageNumberPlus1('next')}>Next</button> */}
+        <ClosePage isVisibleFilter={isVisibleWatch} closeWithoutChange={closeWithoutChange}/>
       <MyWatchList2Poup isVisibleWatch={isVisibleWatch} closeWithoutChange={closeWithoutChange} getWatchFiltres={getWatchFiltres}/>
     </div>
     )

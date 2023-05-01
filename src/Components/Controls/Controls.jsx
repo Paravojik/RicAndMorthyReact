@@ -1,4 +1,5 @@
 import CharchtersFilters from '../CharachtersContainer/CharchtersFilters'
+import ClosePage from '../ClosePage/ClosePage'
 import './Controls.css'
 import { useState, useRef } from 'react'
 function Controls(props){
@@ -98,6 +99,7 @@ function Controls(props){
     <button class="btn filter" id="filters__locations">Filters</button>
     <button class="btn filter" id="add__myWatchList">Add new item</button> */}
     <button className="btn" id="nextBtn" onClick={()=>changeCurrentPageNumberPlus1('next')}>Next</button>
+    <ClosePage isVisibleFilter={isVisibleFilter} closeWithoutChange={closeWithoutChange}/>
     <CharchtersFilters  isVisibleFilter={isVisibleFilter} ClickFiltersCharachter={ClickFiltersCharachter} closeWithoutChange={closeWithoutChange} />
 </div>
  )

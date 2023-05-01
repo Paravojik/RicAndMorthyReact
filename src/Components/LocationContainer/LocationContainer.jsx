@@ -66,7 +66,10 @@ return(
             )
            })}
     </table>
-   <LocationControls amountOfPages__locations={amountOfPages__locations} getLocations={getLocations}/>
+    <div className="controls__box">
+    <LocationControls amountOfPages__locations={amountOfPages__locations} getLocations={getLocations}/>
+    </div>
+
 </div>
 )
 }

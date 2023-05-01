@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import './LocationContainer.css'
 import LocationFiltres from './LocationFiltres'
+import ClosePage from '../ClosePage/ClosePage'
 function LocationControls(props){
     let [isOpenLocationFiltres,setIsOpenLocationFiltres]=useState('none')
     let currentFiltresLocations=useRef('')
@@ -149,6 +150,7 @@ let differentTypes=   [ 'Planet', 'Cluster', 'Space station', 'Microverse', 'TV'
         <button className="btn filter" id="filters__locations" onClick={openLocationsFiltres}>Filters</button>
 
         <button className="btn" id="nextBtn" onClick={()=>changeCurrentPageNumberPlus1('next')} >Next</button>
+        <ClosePage isVisibleFilter={isOpenLocationFiltres} closeWithoutChange={closeWithoutChange}/>
        <LocationFiltres differentTypes={differentTypes} differentDimensions={differentDimensions} isOpenLocationFiltres={isOpenLocationFiltres} closeWithoutChange={closeWithoutChange} getLocationsFiltres={getLocationsFiltres}/>
     </div>
     )

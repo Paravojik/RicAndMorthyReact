@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import './EpisodeContainer.css'
 import EpisodeFiltres from './EpisodeFiltres'
+import ClosePage from '../ClosePage/ClosePage'
 function ControlsEpisode(props){
     let currentFiltresEpisode=useRef('')
     let currentPageNumberEpisode=useRef(1)
@@ -44,6 +45,7 @@ function ControlsEpisode(props){
     
 
         <button className="btn" id="nextBtnEpisode" onClick={()=>changeCurrentPageNumberPlus1('next')}>Next</button>
+        <ClosePage isVisibleFilter={isOpenEpisodeFiltres} closeWithoutChange={closeWithoutChange}/>
      <EpisodeFiltres isOpenEpisodeFiltres={isOpenEpisodeFiltres} closeWithoutChange={closeWithoutChange} getEpisodeFiltres={getEpisodeFiltres}/>
     </div>
     

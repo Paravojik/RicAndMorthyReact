@@ -59,7 +59,10 @@ function EpisodeContainer(){
                     )
                    })}
             </table>
-           <ControlsEpisode amountOfPages__episodes={amountOfPages__episodes} getEpisode={getEpisode}/>
+            <div className="controls__box">
+            <ControlsEpisode amountOfPages__episodes={amountOfPages__episodes} getEpisode={getEpisode}/>
+            </div>
+           
         </div>
     )
 }
