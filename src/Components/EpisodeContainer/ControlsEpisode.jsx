@@ -3,6 +3,7 @@ import './EpisodeContainer.css'
 import EpisodeFiltres from './EpisodeFiltres'
 import ClosePage from '../ClosePage/ClosePage'
 function ControlsEpisode(props){
+    let [nameFilter,setNameFilter]=useState('')
     let currentFiltresEpisode=useRef('')
     let currentPageNumberEpisode=useRef(1)
     let [isOpenEpisodeFiltres,setIsOpenEpisodeFiltres]=useState('none')
@@ -25,6 +26,7 @@ function ControlsEpisode(props){
     }
     function getEpisodeFiltres(val,filters=''){
         (val==='none') ? setIsOpenEpisodeFiltres('none') : setIsOpenEpisodeFiltres('flex')
+        setNameFilter(filters)
         currentFiltresEpisode.current='&name='+filters
         currentPageNumberEpisode.current=1
         props.getEpisode(currentPageNumberEpisode.current,currentFiltresEpisode.current)
@@ -33,7 +35,8 @@ function ControlsEpisode(props){
         (isOpenEpisodeFiltres==='none') ? setIsOpenEpisodeFiltres('flex') : setIsOpenEpisodeFiltres('none')     
     }
     function closeWithoutChange(val){
-        (val==='none') ? setIsOpenEpisodeFiltres('none') : setIsOpenEpisodeFiltres('flex')     
+        (val==='none') ? setIsOpenEpisodeFiltres('none') : setIsOpenEpisodeFiltres('flex')  
+        document.getElementById('poup__episode__filter__inp').value=nameFilter
     }
 
     

@@ -42,6 +42,8 @@ flex-direction: column;
   padding-right: 25px;
   text-align: center;
 opacity: 0.95;
+z-index: 3;
+
 }
 .container{
   width: 100%;
@@ -96,4 +98,16 @@ left: 3%;
   /* .poup__table{
 
   } */
+}
+@media screen and (max-height:600px){
+  .poup__charachter__info{
+    overflow-y: scroll;
+    height: 200px;
+  }
+}
+@media screen and (max-height:300px){
+  .poup{
+    overflow-y: scroll;
+    height: 200px;
+  }
 }

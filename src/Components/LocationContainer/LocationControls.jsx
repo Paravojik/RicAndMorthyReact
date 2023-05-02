@@ -6,6 +6,9 @@ function LocationControls(props){
     let [isOpenLocationFiltres,setIsOpenLocationFiltres]=useState('none')
     let currentFiltresLocations=useRef('')
     let currentPageNumberLocations=useRef(1)
+    let [filtersName,setsFilterName]=useState('')
+    let [filtersType,setsFilterType]=useState('')
+    let [filtersDimension,setFiltersDimension]=useState('')
     function changeCurrentPageNumberPlus1(val){
         if(val==='next' && currentPageNumberLocations.current<props.amountOfPages__locations){
             currentPageNumberLocations.current+=1
@@ -23,10 +26,15 @@ function LocationControls(props){
         console.log(currentPageNumberLocations.current)
        
     }
-    function getLocationsFiltres(val,filterName='',filterType='',filterDimension=''){
+    function getLocationsFiltres(val,filterName,filterType,filterDimension){
+      
+  
         (val==='none') ? setIsOpenLocationFiltres('none') : setIsOpenLocationFiltres('flex')
         currentFiltresLocations.current=filterType+filterDimension+'&name='+filterName
-        // добавити в locationFilter &dimension= i &type=
+        setsFilterName(filterName)
+        setsFilterType(filterType)
+        setFiltersDimension(filterDimension)
+     
         console.log(currentFiltresLocations.current)
         currentPageNumberLocations.current=1
         props.getLocations(currentPageNumberLocations.current,currentFiltresLocations.current)
@@ -35,7 +43,10 @@ function LocationControls(props){
         (isOpenLocationFiltres==='none') ? setIsOpenLocationFiltres('flex') : setIsOpenLocationFiltres('none')     
     }
     function closeWithoutChange(val){
-        (val==='none') ? setIsOpenLocationFiltres('none') : setIsOpenLocationFiltres('flex')     
+        (val==='none') ? setIsOpenLocationFiltres('none') : setIsOpenLocationFiltres('flex')    
+        document.getElementById('poup__location__filter__inp').value=filtersName
+        document.getElementById('poup__location__filters__filter__section__type').value=filtersType
+        document.getElementById('poup__location__filters__filter__section__dimension').value=filtersDimension
     }
     // let differentTypes=useRef([])
 let differentTypes=   [ 'Planet', 'Cluster', 'Space station', 'Microverse', 'TV', 'Resort', 'Fantasy town', 'Dream', 'Dimension', 'unknown', 'Menagerie', 'Game', 'Customs', 'Daycare', 'Dwarf planet (Celestial Dwarf)', 'Miniverse', 'Teenyverse', 'Box', 'Spacecraft', 'Artificially generated world', 'Machine', 'Arcade', 'Spa', 'Quadrant', 'Quasar', 'Mount', 'Liquid', 'Convention', 'Woods', 'Diegesis', 'Non-Diegetic Alternative Reality', 'Nightmare', 'Asteroid', 'Acid Plant', 'Reality', 'Death Star', 'Base', 'Elemental Rings', 'Human', 'Space', 'Hell', 'Police Department', '', 'Country', 'Consciousness']

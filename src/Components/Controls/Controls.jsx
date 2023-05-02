@@ -5,6 +5,9 @@ import { useState, useRef } from 'react'
 function Controls(props){
     let [isVisibleFilter,setIsVisibleFilter]=useState('none')
     // let [currentPageNumber,setCurrentPageNumber]=useState(1)
+    let [filterStatus,setFilterStatus]=useState('')
+    let [filterSpecies,setFilterSpecies]=useState('')
+    let [filterGender,setFilterGender]=useState('')
     let currentFiltres=useRef('')
     let currentPageNumber=useRef(1)
     function changeCurrentPageNumberPlus1(val){
@@ -74,6 +77,9 @@ function Controls(props){
         // }
          }
     function ClickFiltersCharachter(val,filterStatus,filterSpecies,filterGender){
+        setFilterGender(filterGender)
+        setFilterSpecies(filterSpecies)
+        setFilterStatus(filterStatus)
         let filters=filterStatus+filterSpecies+filterGender
         console.log(filters)
         getFiltersCharacters(filters)
@@ -89,6 +95,9 @@ function Controls(props){
     }
     function closeWithoutChange(val){
         (val==='none') ? setIsVisibleFilter('none') : setIsVisibleFilter('flex')     
+        document.getElementById('poup__charaachter__filters__filter__section__status').value=filterStatus
+        document.getElementById('poup__charaachter__filters__filter__section__species').value=filterSpecies
+        document.getElementById('poup__charaachter__filters__filter__section__gender').value=filterGender
     }
  return(
     <div className="controls">

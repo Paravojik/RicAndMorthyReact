@@ -1,6 +1,7 @@
 import './CharachtersContainer.css'
 import CharachtersCardPoup from './CharachtersCardPoup'
 import { useState } from 'react'
+import ClosePage from '../ClosePage/ClosePage'
 function CharachtersCard(props,{key}){
     let [isVisible,setIsVisible]=useState('none')
     function ClickPoup(close){
@@ -20,6 +21,9 @@ function CharachtersCard(props,{key}){
         }
         console.log(isVisible)
     }
+    function closeWithoutChange(val){
+        (val==='none') ? setIsVisible('none') : setIsVisible('flex')     
+    }
     let currentKeyOfCardCharachter=key
     return(
         <div className="card" key={currentKeyOfCardCharachter}>
@@ -27,6 +31,7 @@ function CharachtersCard(props,{key}){
         <img className="avatar" src={props.image}alt=""/>
        <div className="cardName">{props.name}</div>
        <button className="infoBtn" onClick={ClickPoup}>info</button>
+       <ClosePage isVisibleFilter={isVisible} closeWithoutChange={closeWithoutChange}/>
        <CharachtersCardPoup ClickPoup={ClickPoup} data={props.data} isVisible={isVisible}/>
        </div>
     )

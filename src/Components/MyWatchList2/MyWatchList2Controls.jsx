@@ -15,7 +15,8 @@ function MyWatchList2Controls(props){
         (isVisibleWatch==='none') ? setIsVisibleWatch('flex') : setIsVisibleWatch('none')     
     }
     function closeWithoutChange(val){
-        (val==='none') ? setIsVisibleWatch('none') : setIsVisibleWatch('flex')     
+        (val==='none') ? setIsVisibleWatch('none') : setIsVisibleWatch('flex')
+        document.getElementById('poup__episode__list__inp').value=''     
     }
     return(
         <div className="controls">
