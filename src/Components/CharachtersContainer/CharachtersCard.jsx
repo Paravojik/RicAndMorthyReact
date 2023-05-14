@@ -25,14 +25,21 @@ function CharachtersCard(props,{key}){
         (val==='none') ? setIsVisible('none') : setIsVisible('flex')     
     }
     let currentKeyOfCardCharachter=key
+
+    let currentClass=['card']
+    if(props.thema==='thema__white'){
+        currentClass.push('thema__white__box')
+    }else if(props.thema==='thema__black'){
+        currentClass.push('thema__black__box')
+    }
     return(
-        <div className="card" key={currentKeyOfCardCharachter}>
+        <div className={currentClass.join(' ')} key={currentKeyOfCardCharachter}>
        
         <img className="avatar" src={props.image}alt=""/>
        <div className="cardName">{props.name}</div>
        <button className="infoBtn" onClick={ClickPoup}>info</button>
        <ClosePage isVisibleFilter={isVisible} closeWithoutChange={closeWithoutChange}/>
-       <CharachtersCardPoup ClickPoup={ClickPoup} data={props.data} isVisible={isVisible}/>
+       <CharachtersCardPoup thema={props.thema} ClickPoup={ClickPoup} data={props.data} isVisible={isVisible}/>
        </div>
     )
 }

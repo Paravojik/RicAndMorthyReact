@@ -16,7 +16,7 @@
 .avatar{
     width: 80px;
     height: 80px;
-    box-shadow: 0 0 10px #fff;
+    /* box-shadow: 0 0 10px #fff; */
     border-radius: 50%;
     display: flex;
     justify-content: center;

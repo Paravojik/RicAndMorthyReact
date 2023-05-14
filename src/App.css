@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+
 }
 
 
@@ -55,6 +56,21 @@ flex-wrap: wrap;
 justify-content: space-around;
 align-items: flex-start;
 /* margin-top: 10vh; */
+}
+.thema__white{
+  background-color: white;
+  color: black;
+}
+.thema__black{
+  background-color: black;
+  color: rgb(255, 180, 40);
+}
+/* .thema__white__box{
+
+} */
+.thema__black__box{
+  background-color: rgb(255, 180, 40);
+  color: black;
 }
 @media screen and (max-width:900px) {
   .poup{

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import ControlsEpisode from './ControlsEpisode'
 import './EpisodeContainer.css'
-function EpisodeContainer(){
+function EpisodeContainer(props){
     let [amountOfPages__episodes,setAmountOfPages__episodes]=useState('')
     let [currentPageEpisode,setCurrentPageEpisode] =useState([])
     function getEpisode(page,episodes__filtres=''){
@@ -35,8 +35,14 @@ function EpisodeContainer(){
         alert("There isn't any Episodes ")
       });
     },[])
+    let currentClass=['container','episode__container','container__table']
+if(props.thema==='thema__white'){
+    currentClass.push('thema__white')
+}else if(props.thema==='thema__black'){
+    currentClass.push('thema__black')
+}
     return(
-        <div className="container episode__container container__table" >
+        <div className={currentClass.join(' ')} >
             <table className="episode__container__table">
                 <thead className="episode__row">
                     <tr>

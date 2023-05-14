@@ -1,7 +1,7 @@
 import { useEffect,useState } from 'react';
 import './LocationContainer.css'
 import LocationControls from './LocationControls'
-function LocationContainer(){
+function LocationContainer(props){
     let [amountOfPages__locations,setAmountOfPages__locations]=useState('')
     let [currentPageLocations,setCurrentPageLocations]=useState([])
     function getLocations(page,filtres__locations=''){
@@ -42,8 +42,14 @@ function LocationContainer(){
         alert("There isn't any Location")
       });
     },[])
+    let currentClass=['container','location__container','container__table']
+    if(props.thema==='thema__white'){
+        currentClass.push('thema__white')
+    }else if(props.thema==='thema__black'){
+        currentClass.push('thema__black')
+    }
 return(
-    <div className="container location__container container__table">
+    <div className={currentClass.join(' ')}>
     <table className="location__container__table">
         <thead className="episode__row">
             <tr>

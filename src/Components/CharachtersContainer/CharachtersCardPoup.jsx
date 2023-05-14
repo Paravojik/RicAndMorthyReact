@@ -45,8 +45,14 @@ import close from '../../img/close.png'
     // setEpisodeVal(props.closePoup)
     // console.log(props.closePoup)
     // console.log(props.data)
+    let currentClass=['poup','poup__charachter__info']
+    if(props.thema==='thema__white'){
+        currentClass.push('thema__white__box')
+    }else if(props.thema==='thema__black'){
+        currentClass.push('thema__black__box')
+    }
     return(
-        <div className="poup poup__charachter__info" style={{display:props.isVisible,filter:'blur(0px)'}}>
+        <div className={currentClass.join(' ')} style={{display:props.isVisible,filter:'blur(0px)'}}>
             <img className='closeBtn' src={close} alt="" onClick={()=>props.ClickPoup('none')}/>
         <img className="avatar poup__img" id="poup__img" src={props.data.image} alt="img"/>
         <div className="cardName poup__name"id="poup__name">{props.data.name}</div>

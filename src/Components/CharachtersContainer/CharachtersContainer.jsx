@@ -4,7 +4,7 @@ import './CharachtersContainer.css'
 // import 'jquery'
 // import $ from 'jquery'
 import { useEffect, useState } from 'react'
-function CharachtersContainer(){
+function CharachtersContainer(props){
 
 //    let [currentFiltres,setCurrentFiltres]=useState('')
 let [amountOfPages,setAmountOfPages]=useState('')
@@ -81,8 +81,14 @@ let [amountOfPages,setAmountOfPages]=useState('')
 //     // getPage(1)
 // // }
 //  }
+let currentClass=['container','charachters__container']
+if(props.thema==='thema__white'){
+    currentClass.push('thema__white')
+}else if(props.thema==='thema__black'){
+    currentClass.push('thema__black')
+}
     return(
-        <div className="container charachters__container"  >
+        <div className={currentClass.join(' ')} >
             {/* <button onClick={()=>getPage(1)}>Start</button> */}
             {/* <div className="card">
              <img className="avatar" src="" alt=""/>
@@ -94,7 +100,7 @@ let [amountOfPages,setAmountOfPages]=useState('')
                 // console.log(item)
                 let currentKey='CharachtersCardKey'+item.id
                 return(
-                <CharachtersCard key={currentKey} id={item.id}  data={item} image={item.image} name={item.name}/>
+                <CharachtersCard thema={props.thema} key={currentKey} id={item.id}  data={item} image={item.image} name={item.name}/>
                 )
             })}
             {/* <CharachtersCard /> */}

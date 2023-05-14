@@ -4,7 +4,7 @@ import MyWatchList2Card from './MyWatchList2Card'
 
 import MyWatchList2Controls from './MyWatchList2Controls'
 
-function MyWatchList2(){
+function MyWatchList2(props){
     let [arrOfEpisodes,setArrOfEpisodes]=useState(JSON.parse(localStorage.getItem('arrOfEpisodes__LS')) || [])
     function getEpisodeWatch(val){
         let copy=[...arrOfEpisodes]
@@ -30,13 +30,19 @@ function MyWatchList2(){
         setArrOfEpisodes(copy)
         localStorage.setItem('arrOfEpisodes__LS',JSON.stringify(arrOfEpisodes))
     }
+    let currentClass=['container','myWatchList']
+    if(props.thema==='thema__white'){
+        currentClass.push('thema__white')
+    }else if(props.thema==='thema__black'){
+        currentClass.push('thema__black')
+    }
 return(
-    <div className="container myWatchList">
+    <div className={currentClass.join(' ')}>
        
         {arrOfEpisodes.map((item)=>{
             // console.log(item)
             return(
-                <MyWatchList2Card key={item.id} id={item.id} name={item.name} isWatched={item.isWatched} isDeleted={item.isDeleted} changeIsWatched={changeIsWatched} deleteWatch={deleteWatch}/>
+                <MyWatchList2Card thema={props.thema} key={item.id} id={item.id} name={item.name} isWatched={item.isWatched} isDeleted={item.isDeleted} changeIsWatched={changeIsWatched} deleteWatch={deleteWatch}/>
             )
         })}
         

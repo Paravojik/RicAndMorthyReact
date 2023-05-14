@@ -7,8 +7,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
-    background-color: rgb(54, 54, 54);
-    color: white;
+
     font-weight: 400;
    
 }
@@ -16,6 +15,7 @@
     font-size: 24px;
  cursor: pointer;
  text-align: center;
+ color: white;
 }
 #header__section__page__characters{
     color: rgb(250, 81, 81);
@@ -30,7 +30,14 @@
 .header__section__page{
     margin: 0 10px;
 }
-
+.thema__white__header{
+    background-color: rgb(54, 54, 54);
+    color: white;
+}
+.thema__black__header{
+    background-color: rgb(54, 54, 54);
+    color: rgb(255, 180, 40);
+}
   @media screen and (max-width:900px){
     .header__section__page{
         font-size: 16px;

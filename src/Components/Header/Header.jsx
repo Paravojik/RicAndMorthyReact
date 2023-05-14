@@ -42,8 +42,14 @@ $('#add__myWatchList').css('display','flex')
     $('.container').css('display','none')
     $('.myWatchList').css('display','flex')
 }
+let currentClass=['header']
+if(props.thema==='thema__white'){
+    currentClass.push('thema__white__header')
+}else if(props.thema==='thema__black'){
+    currentClass.push('thema__black__header')
+}
     return(
-        <header className="header">
+        <header className={currentClass.join(' ')}>
         <div className="header__logo">Rick and Morty info</div>
         <div className="header__section">
             <div className="header__section__page" id="header__section__page__characters" onClick={clickCharacter}>Characters</div>
