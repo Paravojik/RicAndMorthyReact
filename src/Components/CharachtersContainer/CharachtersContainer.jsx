@@ -67,7 +67,14 @@ let [amountOfPages,setAmountOfPages]=useState('')
             console.log(error)
             alert("There isn't any charachter ")
           });
+          let el = document.getElementsByClassName('header__section__page__a');
 
+for (let i = 0; i < el.length; i++) {
+    let currentEl = el[i];
+    currentEl.style.color = 'white';
+}
+
+          document.getElementById('header__section__page__characters').style.color='rgb(250, 81, 81)'
     },[])
 
     // getPage(1)

@@ -1,47 +1,14 @@
+
 import './Header.css'
-import 'jquery'
-import $ from 'jquery'
+// import 'jquery'
+// import $ from 'jquery'
+import { Link } from 'react-router-dom'
 function Header(props){
-  
-    // $('.filter').css('display','none')
-    // $('#filters__charachter').css('display','flex')
- 
-    
-    function clickCharacter(){
-        $('.filter').css('display','none')
-$('#filters__charachter').css('display','flex')
-        $('.header__section__page').css('color','white')
-        $('#header__section__page__characters').css('color','rgb(250, 81, 81)')
-            $('.container').css('display','none')
-        $('.charachters__container').css('display','flex') 
+//   let [currentClicked,setCurrentClicked]=useState(1)
+// function changeColor(num){
+//     setCurrentClicked(num)
 
-        
-    }
-    function clickEpisode(){
-        $('.filter').css('display','none')
-$('#filters__episode').css('display','flex')
-        $('.header__section__page').css('color','white')
-        $('#header__section__page__episodes').css('color','rgb(250, 81, 81)')
-        $('.container').css('display','none')
-        $('.episode__container').css('display','flex')
-}
-
-function clickLocations(){
-    $('.filter').css('display','none')
-$('#filters__locations').css('display','flex')
-    $('.header__section__page').css('color','white')
-    $('#header__section__page__locations').css('color','rgb(250, 81, 81)')
-    $('.container').css('display','none')
-    $('.location__container').css('display','flex')
-}
-function clickWatchList(){
-    $('.filter').css('display','none')
-$('#add__myWatchList').css('display','flex')
-    $('.header__section__page').css('color','white')
-    $('#header__section__page__watchList').css('color','rgb(250, 81, 81)')
-    $('.container').css('display','none')
-    $('.myWatchList').css('display','flex')
-}
+// }
 let currentClass=['header']
 if(props.thema==='thema__white'){
     currentClass.push('thema__white__header')
@@ -52,10 +19,11 @@ if(props.thema==='thema__white'){
         <header className={currentClass.join(' ')}>
         <div className="header__logo">Rick and Morty info</div>
         <div className="header__section">
-            <div className="header__section__page" id="header__section__page__characters" onClick={clickCharacter}>Characters</div>
-            <div className="header__section__page" id="header__section__page__episodes" onClick={clickEpisode}>Episodes</div>
-            <div className="header__section__page" id="header__section__page__locations" onClick={clickLocations}>Locations</div>
-            <div className="header__section__page" id="header__section__page__watchList" onClick={clickWatchList}>My watch list</div>
+        
+            <div className="header__section__page"  ><Link className="header__section__page__a"   id="header__section__page__characters" to='/' style={{color:'white'}} >Characters</Link></div>
+            <div  className="header__section__page"  >    <Link className="header__section__page__a" id="header__section__page__episodes" to='/episodes' style={{color:'white'}}>Episodes</Link></div>
+            <div  className="header__section__page"  ><Link className="header__section__page__a" id="header__section__page__locations" to='/locations' style={{color:'white'}}>Locations</Link></div>
+            <div  className="header__section__page"  ><Link className="header__section__page__a" id="header__section__page__watchList" to='/myWatchList'style={{color:'white'}} >My watch list</Link></div>
         </div>
     </header>
     )

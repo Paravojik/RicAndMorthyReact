@@ -14,7 +14,7 @@
     margin: 0 5px;
 }
 .filter{
-    display: none;
+    display: flex;
 }
 #filters__charachter{
     display: flex;

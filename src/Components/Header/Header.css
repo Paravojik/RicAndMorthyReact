@@ -17,9 +17,9 @@
  text-align: center;
  color: white;
 }
-#header__section__page__characters{
+/* #header__section__page__characters{
     color: rgb(250, 81, 81);
-}
+} */
 .header__logo{
     font-size: 32px;
     font-weight: 600;
@@ -37,7 +37,13 @@
 .thema__black__header{
     background-color: rgb(54, 54, 54);
     color: rgb(255, 180, 40);
+}a{
+    text-decoration: none;
+    color: white;
 }
+a:active{
+    color: rgb(250, 81, 81);
+} 
   @media screen and (max-width:900px){
     .header__section__page{
         font-size: 16px;

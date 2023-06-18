@@ -4,6 +4,7 @@ import './EpisodeContainer.css'
 function EpisodeContainer(props){
     let [amountOfPages__episodes,setAmountOfPages__episodes]=useState('')
     let [currentPageEpisode,setCurrentPageEpisode] =useState([])
+    
     function getEpisode(page,episodes__filtres=''){
         fetch('https://rickandmortyapi.com/api/episode?page='+page+episodes__filtres)
         .then(response=>{
@@ -34,6 +35,14 @@ function EpisodeContainer(props){
         console.log(error)
         alert("There isn't any Episodes ")
       });
+      let el = document.getElementsByClassName('header__section__page__a');
+
+      for (let i = 0; i < el.length; i++) {
+          let currentEl = el[i];
+          currentEl.style.color = 'white';
+      }
+      
+      document.getElementById('header__section__page__episodes').style.color='rgb(250, 81, 81)'
     },[])
     let currentClass=['container','episode__container','container__table']
 if(props.thema==='thema__white'){

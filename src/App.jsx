@@ -8,6 +8,7 @@ import Header from './Components/Header/Header';
 import LocationContainer from './Components/LocationContainer/LocationContainer';
 import MyWatchList2 from './Components/MyWatchList2/MyWatchList2';
 import Settings from './Components/Settings/Settings';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   let date=new Date().getHours()
@@ -60,10 +61,17 @@ function App() {
     <div className="App" id='App'>
       <Header thema={thema}/>
       <div className="App__main">
-        <CharachtersContainer thema={thema}/>
-        <EpisodeContainer thema={thema}/>
+        <Routes>
+
+   <Route path='/' element={<CharachtersContainer thema={thema}/>}/>
+   <Route path='/episodes' element={<EpisodeContainer thema={thema}/>}/>
+        <Route path='/locations' element={ <LocationContainer thema={thema}/>}/>
+        <Route path='/myWatchList' element={ <MyWatchList2 thema={thema}/>}/>
+        {/* <CharachtersContainer thema={thema}/> */}
+        {/* <EpisodeContainer thema={thema}/>
         <LocationContainer thema={thema}/>
-        <MyWatchList2 thema={thema}/>
+        <MyWatchList2 thema={thema}/> */}
+        </Routes>
         <Settings changeThema={changeThema}/>
         {/* <Controls/> */}
       </div>

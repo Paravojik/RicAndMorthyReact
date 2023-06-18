@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './MyWatchList2.css'
 import MyWatchList2Card from './MyWatchList2Card'
 
@@ -36,6 +36,16 @@ function MyWatchList2(props){
     }else if(props.thema==='thema__black'){
         currentClass.push('thema__black')
     }
+    useEffect(function(){
+        let el = document.getElementsByClassName('header__section__page__a');
+
+        for (let i = 0; i < el.length; i++) {
+            let currentEl = el[i];
+            currentEl.style.color = 'white';
+        }
+        
+        document.getElementById('header__section__page__watchList').style.color='rgb(250, 81, 81)' 
+    },[])
 return(
     <div className={currentClass.join(' ')}>
        

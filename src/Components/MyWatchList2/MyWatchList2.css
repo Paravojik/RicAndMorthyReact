@@ -1,5 +1,5 @@
 .myWatchList{
-    display: none;
+    display: flex;
 }
 .myWatchList__box{
     width: 200px;

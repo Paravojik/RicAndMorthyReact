@@ -41,6 +41,14 @@ function LocationContainer(props){
         console.log(error)
         alert("There isn't any Location")
       });
+      let el = document.getElementsByClassName('header__section__page__a');
+
+      for (let i = 0; i < el.length; i++) {
+          let currentEl = el[i];
+          currentEl.style.color = 'white';
+      }
+      
+      document.getElementById('header__section__page__locations').style.color='rgb(250, 81, 81)'
     },[])
     let currentClass=['container','location__container','container__table']
     if(props.thema==='thema__white'){
